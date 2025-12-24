@@ -3,33 +3,22 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Risen Dust — Web Projects & Portfolio</title>
-  <meta name="description" content="Risen Dust showcases websites and web builds: fast, clean, and designed with purpose." />
+  <title>Risen Dust — Portfolio</title>
+  <meta name="description" content="Risen Dust showcases websites built with purpose: clean, fast, and modern." />
   <meta name="theme-color" content="#0b0a10" />
-
   <style>
     :root{
-      --bg0:#07060a;
-      --bg1:#0b0a10;
-      --card:#11111a;
-      --card2:#141425;
-      --text:#f4f1ff;
-      --muted:#b9b2c9;
+      --bg0:#07060a; --bg1:#0b0a10;
+      --card:#11111a; --text:#f4f1ff; --muted:#b9b2c9;
       --line:rgba(255,255,255,.08);
-      --gold:#f6c65b;
-      --ember:#ff6a3d;
-      --rose:#ff3d7f;
-      --sky:#7aa7ff;
-      --good:#34d399;
-      --shadow: 0 18px 50px rgba(0,0,0,.45);
-      --radius: 18px;
-      --max: 1100px;
+      --gold:#f6c65b; --ember:#ff6a3d; --sky:#7aa7ff; --rose:#ff3d7f;
+      --shadow:0 18px 50px rgba(0,0,0,.45);
+      --radius:18px; --max:1100px;
     }
     *{box-sizing:border-box}
     body{
-      margin:0;
+      margin:0; color:var(--text);
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      color:var(--text);
       background:
         radial-gradient(1200px 700px at 20% 10%, rgba(255,106,61,.20), transparent 55%),
         radial-gradient(900px 600px at 80% 10%, rgba(122,167,255,.18), transparent 55%),
@@ -39,311 +28,246 @@
     }
     a{color:inherit}
     .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 70px}
-    .topbar{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:14px; padding:12px 0 22px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:12px; text-decoration:none;
-    }
+    header{display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;}
+    .brand{display:flex; align-items:center; gap:12px; text-decoration:none}
     .mark{
       width:42px; height:42px; border-radius:14px;
       background:
         radial-gradient(12px 12px at 30% 30%, rgba(255,255,255,.35), transparent 60%),
-        radial-gradient(18px 18px at 70% 30%, rgba(255,255,255,.18), transparent 65%),
         linear-gradient(135deg, rgba(255,106,61,.95), rgba(246,198,91,.95));
       box-shadow: 0 12px 30px rgba(255,106,61,.18);
-      position:relative;
-      overflow:hidden;
+      position:relative; overflow:hidden;
     }
     .mark:after{
-      content:"";
-      position:absolute; inset:-40%;
+      content:""; position:absolute; inset:-40%;
       background: conic-gradient(from 220deg, rgba(255,255,255,.22), transparent 40%, rgba(255,255,255,.12), transparent 70%);
-      animation: spin 10s linear infinite;
-      opacity:.9;
+      animation:spin 10s linear infinite;
     }
     @keyframes spin{to{transform:rotate(360deg)}}
-    .brand h1{
-      margin:0; font-size:16px; letter-spacing:.6px; text-transform:uppercase;
-    }
-    .brand small{display:block; color:var(--muted); font-size:12px; margin-top:2px}
-    nav{
-      display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;
-    }
+    .brand h1{margin:0; font-size:16px; letter-spacing:.6px; text-transform:uppercase}
+    .brand small{display:block; margin-top:2px; color:var(--muted); font-size:12px}
+    nav{display:flex; gap:10px; flex-wrap:wrap}
     nav a{
-      text-decoration:none; color:var(--muted); font-weight:600; font-size:13px;
-      padding:9px 12px; border:1px solid var(--line); border-radius:999px;
+      text-decoration:none; color:var(--muted);
+      padding:9px 12px; border:1px solid var(--line);
+      border-radius:999px; font-weight:700; font-size:13px;
       background: rgba(255,255,255,.02);
     }
     nav a:hover{color:var(--text); border-color:rgba(255,255,255,.16)}
-
-    .hero{
-      display:grid; grid-template-columns: 1.3fr .9fr; gap:18px;
-      align-items:stretch; margin-top:6px;
-    }
-    @media (max-width: 900px){ .hero{grid-template-columns:1fr; } }
     .panel{
+      margin-top:18px;
       border:1px solid var(--line);
       background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       padding:22px;
-      position:relative;
-      overflow:hidden;
+      position:relative; overflow:hidden;
     }
     .panel:before{
-      content:"";
-      position:absolute; inset:-2px;
+      content:""; position:absolute; inset:-2px; pointer-events:none; opacity:.9;
       background:
         radial-gradient(500px 240px at 20% 0%, rgba(255,106,61,.20), transparent 65%),
         radial-gradient(400px 220px at 80% 10%, rgba(246,198,91,.14), transparent 70%),
         radial-gradient(500px 260px at 40% 120%, rgba(122,167,255,.10), transparent 60%);
-      pointer-events:none;
-      opacity:.9;
     }
     .panel > *{position:relative}
     .kicker{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 12px; border:1px solid rgba(255,255,255,.10);
-      border-radius:999px; color:var(--muted);
+      display:inline-flex; gap:8px; align-items:center;
+      padding:8px 12px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
       background: rgba(0,0,0,.15);
-      font-size:12px; font-weight:700; letter-spacing:.35px;
+      color:var(--muted);
+      font-size:12px; font-weight:800; letter-spacing:.35px;
     }
     .dot{width:8px; height:8px; border-radius:99px; background:var(--ember); box-shadow:0 0 18px rgba(255,106,61,.6)}
-    h2{
-      margin:14px 0 10px; font-size:38px; line-height:1.05; letter-spacing:-.6px;
-    }
-    .sub{
-      margin:0 0 16px;
-      color:var(--muted);
-      font-size:15px;
-      line-height:1.6;
-      max-width: 62ch;
-    }
-    .cta{
-      display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;
-    }
-    .btn{
-      text-decoration:none; font-weight:800; font-size:14px;
-      padding:12px 14px; border-radius:12px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      display:inline-flex; align-items:center; gap:10px;
-    }
-    .btn.primary{
-      border-color: rgba(255,106,61,.35);
-      background: linear-gradient(135deg, rgba(255,106,61,.95), rgba(246,198,91,.95));
-      color:#1b120d;
-      box-shadow: 0 18px 40px rgba(255,106,61,.16);
-    }
-    .btn:hover{transform: translateY(-1px)}
-    .btn:active{transform: translateY(0)}
-    .mini{
-      margin-top:12px;
-      display:flex; flex-wrap:wrap; gap:10px;
-      color:var(--muted); font-size:12px;
-    }
-    .tag{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.02);
-      border-radius:999px;
-      padding:7px 10px;
-    }
-
-    /* Phoenix / ember visual */
-    .phoenixBox{
-      min-height: 320px;
-      display:flex; align-items:center; justify-content:center;
-      position:relative;
-    }
-    .phoenix{
-      width:min(340px, 95%);
-      aspect-ratio: 1 / 1;
-      border-radius: 28px;
-      border:1px solid rgba(255,255,255,.10);
-      background:
-        radial-gradient(18px 18px at 20% 25%, rgba(255,255,255,.25), transparent 60%),
-        radial-gradient(220px 180px at 60% 40%, rgba(255,106,61,.35), transparent 70%),
-        radial-gradient(220px 180px at 40% 70%, rgba(246,198,91,.25), transparent 70%),
-        radial-gradient(240px 200px at 65% 75%, rgba(255,61,127,.14), transparent 70%),
-        linear-gradient(180deg, rgba(0,0,0,.2), rgba(0,0,0,.45));
-      box-shadow: var(--shadow);
-      position:relative;
-      overflow:hidden;
-    }
-    .phoenix:before{
-      content:"";
-      position:absolute; inset:-30%;
-      background:
-        conic-gradient(from 210deg,
-          rgba(255,106,61,.0),
-          rgba(255,106,61,.35),
-          rgba(246,198,91,.32),
-          rgba(122,167,255,.10),
-          rgba(255,61,127,.16),
-          rgba(255,106,61,.0)
-        );
-      animation: spin 16s linear infinite;
-      filter: blur(10px);
-      opacity:.9;
-    }
-    .phoenix:after{
-      content:"";
-      position:absolute; inset:0;
-      background:
-        radial-gradient(12px 12px at 25% 65%, rgba(255,255,255,.22), transparent 60%),
-        radial-gradient(10px 10px at 70% 60%, rgba(255,255,255,.14), transparent 60%),
-        radial-gradient(6px 6px at 40% 30%, rgba(255,255,255,.20), transparent 60%),
-        radial-gradient(900px 180px at 50% 120%, rgba(0,0,0,.65), transparent 70%);
-      pointer-events:none;
-    }
-    .phoenixText{
-      position:absolute; inset:auto 16px 16px 16px;
-      padding:12px 14px;
-      border-radius: 16px;
-      background: rgba(0,0,0,.35);
-      border:1px solid rgba(255,255,255,.10);
-      backdrop-filter: blur(8px);
-      font-size:13px;
-      color: var(--muted);
-      line-height:1.5;
-    }
-    .phoenixText b{color:var(--text)}
-    .embers{
-      position:absolute; inset:0;
-      pointer-events:none;
-      opacity:.9;
-    }
-    .ember{
-      position:absolute;
-      width:6px; height:6px; border-radius:99px;
-      background: var(--ember);
-      filter: blur(.2px);
-      box-shadow: 0 0 18px rgba(255,106,61,.55);
-      animation: floatUp 6s linear infinite;
-      opacity:.65;
-    }
-    @keyframes floatUp{
-      0%{ transform: translateY(60px) scale(.8); opacity:0 }
-      10%{ opacity:.6 }
-      70%{ opacity:.45 }
-      100%{ transform: translateY(-260px) scale(1.1); opacity:0 }
-    }
-
-    section{margin-top:22px}
-    .sectionTitle{
-      display:flex; align-items:baseline; justify-content:space-between; gap:14px; flex-wrap:wrap;
-      margin: 26px 0 10px;
-    }
-    .sectionTitle h3{margin:0; font-size:18px; letter-spacing:.2px}
+    h2{margin:14px 0 10px; font-size:38px; line-height:1.05; letter-spacing:-.6px}
+    .sub{margin:0; color:var(--muted); font-size:15px; line-height:1.6; max-width:62ch}
+    .mini{margin-top:14px; display:flex; flex-wrap:wrap; gap:10px; color:var(--muted); font-size:12px}
+    .tag{border:1px solid var(--line); background:rgba(255,255,255,.02); border-radius:999px; padding:7px 10px}
+    .sectionTitle{display:flex; justify-content:space-between; align-items:baseline; gap:14px; flex-wrap:wrap; margin:26px 0 10px}
+    .sectionTitle h3{margin:0; font-size:18px}
     .sectionTitle p{margin:0; color:var(--muted); font-size:13px}
-
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:14px;
-    }
-    @media (max-width: 980px){ .grid{grid-template-columns: repeat(2, 1fr);} }
-    @media (max-width: 620px){ .grid{grid-template-columns: 1fr;} }
-
+    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+    @media (max-width: 980px){ .grid{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width: 620px){ .grid{grid-template-columns:1fr} }
     .card{
       border:1px solid var(--line);
       background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.10));
-      border-radius: 16px;
+      border-radius:16px;
       padding:16px;
       box-shadow: 0 10px 26px rgba(0,0,0,.25);
       transition: transform .15s ease, border-color .15s ease;
-      overflow:hidden;
-      position:relative;
     }
-    .card:hover{transform: translateY(-2px); border-color: rgba(255,255,255,.16)}
-    .card .meta{display:flex; align-items:center; justify-content:space-between; gap:10px}
+    .card:hover{transform:translateY(-2px); border-color:rgba(255,255,255,.16)}
+    .meta{display:flex; align-items:center; justify-content:space-between; gap:10px}
+    .pill{font-size:12px; color:var(--muted); border:1px solid var(--line); background:rgba(255,255,255,.02); padding:6px 10px; border-radius:999px}
     .badge{
-      font-size:12px; font-weight:800; letter-spacing:.2px;
+      font-size:12px; font-weight:900; letter-spacing:.2px;
       color:#1b120d;
       background: linear-gradient(135deg, rgba(246,198,91,.95), rgba(255,106,61,.95));
       padding:6px 10px; border-radius:999px;
     }
-    .pill{
-      font-size:12px; color:var(--muted);
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.02);
-      padding:6px 10px; border-radius:999px;
-    }
     .card h4{margin:12px 0 6px; font-size:16px}
     .card p{margin:0; color:var(--muted); font-size:13px; line-height:1.55}
-    .card a.go{
-      margin-top:12px;
-      display:inline-flex; gap:8px; align-items:center;
-      text-decoration:none;
-      color: var(--text);
-      font-weight:800;
-      font-size:13px;
-    }
-    .card a.go span{
-      display:inline-block; width:26px; height:26px; border-radius:10px;
-      background: rgba(255,255,255,.05);
-      border:1px solid var(--line);
-      display:grid; place-items:center;
-    }
-
-    .twoCol{
-      display:grid; grid-template-columns: 1fr 1fr; gap:14px;
-    }
+    .go{margin-top:12px; display:inline-flex; gap:8px; align-items:center; text-decoration:none; font-weight:900; font-size:13px}
+    .go span{width:26px; height:26px; border-radius:10px; background:rgba(255,255,255,.05); border:1px solid var(--line); display:grid; place-items:center}
+    .twoCol{display:grid; grid-template-columns:1fr 1fr; gap:14px}
     @media (max-width: 900px){ .twoCol{grid-template-columns:1fr} }
-    .list{
-      margin:10px 0 0; padding:0; list-style:none;
-      display:grid; gap:10px;
-    }
-    .list li{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.02);
-      border-radius: 14px;
-      padding:12px 12px;
-      color:var(--muted);
-      line-height:1.55;
-      font-size:13px;
-    }
-    .list b{color:var(--text)}
-    footer{
-      margin-top:26px;
-      color:var(--muted);
-      font-size:12px;
-      display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
-      border-top: 1px solid var(--line);
-      padding-top:18px;
-    }
+    ul.list{margin:10px 0 0; padding:0; list-style:none; display:grid; gap:10px}
+    ul.list li{border:1px solid var(--line); background:rgba(255,255,255,.02); border-radius:14px; padding:12px; color:var(--muted); font-size:13px; line-height:1.55}
+    ul.list b{color:var(--text)}
+    footer{margin-top:26px; border-top:1px solid var(--line); padding-top:18px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; color:var(--muted); font-size:12px}
     .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace}
-    .notice{opacity:.85}
   </style>
 </head>
-
 <body>
   <div class="wrap">
-    <div class="topbar">
-      <a class="brand" href="#top" aria-label="Risen Dust home">
-        <div class="mark" aria-hidden="true"></div>
+    <header>
+      <a class="brand" href="#top">
+        <div class="mark"></div>
         <div>
           <h1>Risen Dust</h1>
-          <small>web builds • portfolio • contact</small>
+          <small>phoenix • purpose • web builds</small>
         </div>
       </a>
       <nav>
         <a href="#work">Work</a>
         <a href="#about">Bio</a>
         <a href="#contact">Contact</a>
-        <a href="#extras">Extras</a>
       </nav>
+    </header>
+
+    <div id="top" class="panel">
+      <div class="kicker"><span class="dot"></span> From dust — into purpose</div>
+      <h2>Websites that rise: clean, fast, and built to convert.</h2>
+      <p class="sub">
+        Risen Dust is my portfolio — inspired by the phoenix rising from ashes and the truth that God formed us from dust and gave us purpose.
+        Below are the websites I’ve completed, plus how to contact me for a build.
+      </p>
+      <div class="mini">
+        <div class="tag">⚡ Performance-first</div>
+        <div class="tag">📱 Mobile clean</div>
+        <div class="tag">🔍 SEO-ready</div>
+        <div class="tag">🛠️ Easy to update</div>
+      </div>
     </div>
 
-    <div id="top" class="hero">
-      <div class="panel">
-        <div class="kicker"><span class="dot"></span> From dust — into purpose</div>
-        <h2>A portfolio built like a phoenix: clean, fast, and rising.</h2>
-        <p class="sub">
-          I build modern websites that load fast, look premium, and turn visitors into customers.
-          Risen Dust is where I showcase the projects I’ve been creating — and where new builds begin.
-        </p>
-        <div class="cta">
-          <a class="btn prim
+    <section id="work">
+      <div class="sectionTitle">
+        <h3>Websites I’ve Built</h3>
+        <p>Click any project to visit.</p>
+      </div>
+      <div class="grid" id="portfolio"></div>
+    </section>
+
+    <section id="about">
+      <div class="sectionTitle">
+        <h3>Bio</h3>
+        <p>Short and trustworthy.</p>
+      </div>
+      <div class="twoCol">
+        <div class="card">
+          <div class="meta"><div class="pill">About</div><div class="badge">Builder</div></div>
+          <h4>Hi — I’m Lance.</h4>
+          <p>
+            I build modern websites that look premium and stay simple. I focus on speed, clarity, and trust —
+            so your site doesn’t just “exist”… it actually helps you win customers.
+          </p>
+          <p style="margin-top:10px;">
+            <b>Risen Dust</b> is my creative home base: a reminder that we’re formed from dust and still made to rise.
+          </p>
+        </div>
+        <div class="card">
+          <div class="meta"><div class="pill">What I build</div><div class="badge">Sites</div></div>
+          <ul class="list">
+            <li><b>Service business sites:</b> contractors, local pros, trades</li>
+            <li><b>Brand sites:</b> clean design, strong identity</li>
+            <li><b>Team/event hubs:</b> updates, schedules, media</li>
+            <li><b>Landing pages:</b> ads → calls/texts/forms</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="sectionTitle">
+        <h3>Contact</h3>
+        <p>Replace the placeholders with your info.</p>
+      </div>
+      <div class="twoCol">
+        <div class="card">
+          <div class="meta"><div class="pill">Direct</div><div class="badge">Fast</div></div>
+          <h4>Let’s build something.</h4>
+          <ul class="list">
+            <li><b>Email:</b> <span class="mono">hello@risendust.com</span> (set this up)</li>
+            <li><b>Phone/Text:</b> <span class="mono">(###) ###-####</span> (replace this)</li>
+            <li><b>Service area:</b> Chicago + surrounding suburbs</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="meta"><div class="pill">Next steps</div><div class="badge">Easy</div></div>
+          <ul class="list">
+            <li><b>1)</b> Tell me what you need + your deadline</li>
+            <li><b>2)</b> I send a simple plan + price</li>
+            <li><b>3)</b> Build → review → launch</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Risen Dust</div>
+      <div>Hosted on Cloudflare Pages • <span class="mono">risendust.com</span></div>
+    </footer>
+  </div>
+
+  <script>
+    const projects = [
+      {
+        title: "Jin Kitty",
+        url: "https://jinkitty.com",
+        type: "Brand / Creative",
+        note: "A stylized brand website with strong visual identity."
+      },
+      {
+        title: "John’s Masonry & Roofing",
+        url: "https://johnsmasonryandroofing.com",
+        type: "Service Business",
+        note: "Contractor website built for trust, clarity, and leads."
+      },
+      {
+        title: "Ravens Girls Wrestling",
+        url: "https://ravensgirlswrestling.com",
+        type: "Team / Athletics",
+        note: "Team hub for updates, schedules, and community."
+      },
+      {
+        title: "TV Install Chicago",
+        url: "https://tvinstallchicago.tv",
+        type: "Service Business",
+        note: "High-conversion TV mounting site optimized for speed."
+      }
+    ];
+
+    const grid = document.getElementById("portfolio");
+    projects.forEach(p => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <div class="meta">
+          <div class="pill">${p.type}</div>
+          <div class="badge">Live</div>
+        </div>
+        <h4>${p.title}</h4>
+        <p>${p.note}</p>
+        <a class="go" href="${p.url}" target="_blank" rel="noopener">
+          <span>↗</span> Visit
+        </a>
+      `;
+      grid.appendChild(card);
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
